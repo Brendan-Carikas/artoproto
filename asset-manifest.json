@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/designapps/static/js/main.2d1230e5.js",
+    "static/js/289.204c7ce8.chunk.js": "/designapps/static/js/289.204c7ce8.chunk.js",
+    "static/js/787.d468af10.chunk.js": "/designapps/static/js/787.d468af10.chunk.js",
+    "static/media/auth-bg.png": "/designapps/static/media/auth-bg.0b9c2d15d1bc216a194d.png",
+    "static/media/arto-site-logo.png": "/designapps/static/media/arto-site-logo.71e177eae6031e965b47.png",
+    "static/media/arto-site-logo-reverse.png": "/designapps/static/media/arto-site-logo-reverse.ddc688591cc712870686.png",
+    "index.html": "/designapps/index.html",
+    "main.2d1230e5.js.map": "/designapps/static/js/main.2d1230e5.js.map",
+    "289.204c7ce8.chunk.js.map": "/designapps/static/js/289.204c7ce8.chunk.js.map",
+    "787.d468af10.chunk.js.map": "/designapps/static/js/787.d468af10.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.2d1230e5.js"
+  ]
+}
