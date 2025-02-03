@@ -609,9 +609,24 @@ const ConversationsTable = ({ sx }) => {
                       '&:hover': {
                         backgroundColor: 'action.hover',
                       },
+                      '&:focus': {
+                        backgroundColor: 'action.hover',
+                        outline: '2px solid',
+                        outlineColor: 'primary.main',
+                        outlineOffset: '-2px'
+                      },
                       verticalAlign: 'middle'
                     }}
                     onClick={handleSortRequest}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        handleSortRequest();
+                      }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Sort by timeframe, currently sorted ${order === 'asc' ? 'ascending' : 'descending'}`}
                   >
                     <Box sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
                       Timeframe
@@ -648,6 +663,17 @@ const ConversationsTable = ({ sx }) => {
                 onRowsPerPageChange={(event) => {
                   setRowsPerPage(parseInt(event.target.value, 10));
                   setPage(0);
+                }}
+                sx={{
+                  '.MuiTablePagination-select': {
+                    backgroundColor: 'background.paper'
+                  },
+                  '.MuiInputBase-root': {
+                    backgroundColor: 'background.paper'
+                  },
+                  '.MuiSelect-select': {
+                    backgroundColor: 'background.paper'
+                  }
                 }}
               />
             </Box>
