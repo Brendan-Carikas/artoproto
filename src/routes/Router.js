@@ -8,6 +8,7 @@ import ConversationLayout from "../layouts/ConversationLayout/ConversationLayout
 
 // Pages
 import Dashboard1 from "../views/dashboards/Dashboard1.js";
+import ConvoDashboard from "../views/dashboards/ConvoDashboard.js";
 import SingleConversation from "../views/Settings/SingleConversation.js";
 import LoginSelector from "../views/auth/LoginSelector.js";
 import ModernLogin from "../views/auth/ModernLogin.js";
@@ -34,6 +35,7 @@ const ThemeRoutes = [
     children: [
       { path: "", element: <Navigate to="/app/dashboards/dashboard1" /> },
       { path: "dashboards/dashboard1", element: <Dashboard1 /> },
+      { path: "dashboards/convo", element: <ConvoDashboard /> },
       { path: "admin", element: <InvotraAdmin /> },
       { path: "admin/dashboard", element: <AdminDashboard /> },
     ],
