@@ -31,6 +31,7 @@ import {
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { enGB } from 'date-fns/locale';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import ChatIcon from '@mui/icons-material/Chat';
 import FilterListIcon from '@mui/icons-material/FilterList';
@@ -677,7 +678,7 @@ const ConversationsTable = ({ sx }) => {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell padding="none" sx={{ width: '48px', verticalAlign: 'middle' }} />
+                  <TableCell component="td" padding="none" sx={{ width: '48px', verticalAlign: 'middle' }} />
                   <TableCell 
                     sx={{ 
                       color: 'text.primary', 
@@ -914,12 +915,13 @@ const ConversationsTable = ({ sx }) => {
       >
         <DialogTitle id="date-range-dialog-title">Select Date Range</DialogTitle>
         <DialogContent>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <LocalizationProvider dateAdapter={AdapterDateFns} locale={enGB}>
             <Stack spacing={3} sx={{ mt: 2, minWidth: 300 }}>
               <DatePicker
                 label="Start Date"
                 value={startDate}
                 onChange={(newValue) => setStartDate(newValue)}
+                inputFormat="dd/MM/yyyy"
                 renderInput={(params) => (
                   <TextField 
                     {...params} 
@@ -936,6 +938,7 @@ const ConversationsTable = ({ sx }) => {
                 label="End Date"
                 value={endDate}
                 onChange={(newValue) => setEndDate(newValue)}
+                inputFormat="dd/MM/yyyy"
                 renderInput={(params) => (
                   <TextField 
                     {...params} 
