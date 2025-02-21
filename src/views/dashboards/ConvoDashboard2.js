@@ -1,12 +1,11 @@
 import React from "react";
 import { Grid, Box, Typography, Tooltip, IconButton, Card, CardContent } from "@mui/material";
-import ChatIcon from '@mui/icons-material/Chat';
+import ChatIconOutlined from '@mui/icons-material/ChatOutlined';
 import InfoOutlined from '@mui/icons-material/InfoOutlined';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import ThumbDownIcon from '@mui/icons-material/ThumbDown';
-import ConversationsTable from "./dashboard-components/ConversationsTable";
-import FeedbackTable from "./dashboard-components/FeedbackTable";
+import ThumbUpIconOutlined from '@mui/icons-material/ThumbUpOutlined';
+import ThumbDownIconOutlined from '@mui/icons-material/ThumbDownOutlined';
+import Feedbacktable2 from "./dashboard-components/Feedbacktable2";
 
 const StatsCard = ({ title, value, subtitle, icon: Icon }) => (
   <Card sx={{
@@ -19,11 +18,11 @@ const StatsCard = ({ title, value, subtitle, icon: Icon }) => (
     <CardContent sx={{ p: 0, pb: '0 !important' }}>
       <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
         <Icon color="primary" sx={{ mr: 2, width: 28, height: 28 }} />
-        <Typography variant="h5" fontWeight="bold" component="div">
+        <Typography variant="h5" fontWeight="semi-bold" component="div">
           {title}
         </Typography>
       </Box>
-      <Typography variant="h2" component="div" sx={{ mb: 1, color: 'primary.main' }}>
+      <Typography variant="h3"fontSize={36} component="div" sx={{ mb: 1, color: 'primary.main' }}>
         {value}
       </Typography>
       {subtitle && (
@@ -35,7 +34,7 @@ const StatsCard = ({ title, value, subtitle, icon: Icon }) => (
   </Card>
 );
 
-const ConvoDashboard = () => {
+const ConvoDashboard2 = () => {
   // Calculate feedback stats
   const calculateFeedbackStats = (conversations) => {
     const stats = {
@@ -114,7 +113,7 @@ const ConvoDashboard = () => {
     <Box sx={{ p: 3, mt: 3 }}>
       <Box sx={{ display: 'flex', alignItems: 'center', mb: 6, ml: 1.2 }}>
         <Typography variant="h1" component="h1">
-          Convo Dashboard
+          Conversations
         </Typography>
         <Tooltip 
           title="Each row in the table represents a single query and response. Conversations may be split across multiple rows." 
@@ -143,26 +142,26 @@ const ConvoDashboard = () => {
       <Grid container spacing={3} sx={{ mb: 4 }}>
         <Grid item xs={12} md={4}>
           <StatsCard
-            title="Total Interactions"
+            title="Total interactions"
             value={formatNumber(feedbackStats.totalInteractions)}
-            subtitle="Total number of feedback ratings, categories, and comments from all sources"
-            icon={ChatIcon}
+            subtitle="Total number of converations and feedback responses"
+            icon={ChatIconOutlined}
           />
         </Grid>
         <Grid item xs={12} md={4}>
           <StatsCard
-            title="Customer Satisfaction"
+            title="Customer satisfaction"
             value={`${feedbackStats.satisfactionRate}%`}
             subtitle={`${feedbackStats.positiveCount} positive responses`}
-            icon={ThumbUpIcon}
+            icon={ThumbUpIconOutlined}
           />
         </Grid>
         <Grid item xs={12} md={4}>
           <StatsCard
-            title="Customer Dissatisfaction"
+            title="Customer dissatisfaction"
             value={`${feedbackStats.dissatisfactionRate}%`}
             subtitle={`${feedbackStats.negativeCount} negative responses`}
-            icon={ThumbDownIcon}
+            icon={ThumbDownIconOutlined}
           />
         </Grid>
       </Grid>
@@ -170,11 +169,11 @@ const ConvoDashboard = () => {
       {/* Row 2 - Feedback Table */}
       <Grid container sx={{ mb: 6 }}>
         <Grid item xs={12}>
-          <FeedbackTable sx={cardStyle} />
+          <Feedbacktable2 sx={cardStyle} />
         </Grid>
       </Grid>
     </Box>
   );
 };
 
-export default ConvoDashboard;
+export default ConvoDashboard2;
