@@ -632,9 +632,8 @@ const Feedbacktable2 = ({ sx }) => {
             aria-expanded={isExpanded}
             aria-label={`${isExpanded ? 'Collapse' : 'Expand'} conversation details`}
             autoFocus={isFocused}
-            startIcon={isExpanded ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           >
-            {isExpanded ? 'Collapse' : 'Expand'}
+            {isExpanded ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </Button>
         </TableCell>
         {!showFeedback && <TableCell sx={{ color: 'text.secondary', whiteSpace: 'nowrap', verticalAlign: 'middle' }}>
